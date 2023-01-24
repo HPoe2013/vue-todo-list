@@ -3,7 +3,7 @@
 Front end code exam for Summit Credit Union
 Exam instructions
 
-Clone the repository and create a branch off of main.
+Fork the repository and create a branch off of main.
 
 Create a Vue app in visual studio code.
 
@@ -19,8 +19,8 @@ Create a Vue app in visual studio code.
   1. Add a component framework (inkline preferred) of your choice.
   2. Use the Vue Router and create at least 1 route in your app.
   3. Use the Vuex Store to create a state object with at least 1 mutation.
- 
- 
-**Push your code to GitHub and create a pull-request to main. This is important**
+
+**Help with Forking a Bitbucket repository and submitting a pull request
+https://www.w3schools.com/git/git_remote_fork.asp?remote=bitbucket
 
 **Be prepared to talk about your code and decision making.**
