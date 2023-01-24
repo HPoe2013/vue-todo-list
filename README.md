@@ -21,6 +21,6 @@ Create a Vue app in visual studio code.
   3. Use the Vuex Store to create a state object with at least 1 mutation.
 
 **Help with Forking a Bitbucket repository and submitting a pull request
-https://www.w3schools.com/git/git_remote_fork.asp?remote=bitbucket
+https://www.w3schools.com/git/git_remote_fork.asp?remote=bitbucket**
 
 **Be prepared to talk about your code and decision making.**
