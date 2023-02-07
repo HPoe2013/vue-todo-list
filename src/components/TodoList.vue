@@ -3,7 +3,7 @@
     <h1>To Do:</h1>
     <ol class="list">
       <li v-for="item in listItems" :key="item.id" >
-        <TodoListItem :text=item.task :id=item.id :onDelete=onItemDelete />
+        <TodoListItem :text=item.task :id=item.id :onDelete=onItemDelete :onSave=onItemUpdate />
       </li>
     </ol>
 
@@ -29,7 +29,8 @@
     },
     methods: {
       addItemClick() {
-        this.onCreate('new item');
+        let text = window.prompt('Enter task text for new item:', 'new item');
+        this.onCreate(text);
       },
       onItemDelete(itemId) {
         TodoListService.removeTodoListItem(itemId).then(data => {
