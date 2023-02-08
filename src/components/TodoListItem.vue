@@ -5,7 +5,7 @@
             <span v-if="!isEditing">{{text}}</span>
             <input class="edit-text" v-if="isEditing" :value="text" />
         </span>
-        <span>
+        <span class="btn-container">
             <button class="edit-btn" @click="editClicked($event)">{{isEditing?"Save":"Edit"}}</button>
             <button class="delete-btn" @click="deleteClicked()">X</button>
         </span>
@@ -50,6 +50,10 @@
     border: 1px solid;
     padding: 5px;
     border-radius: 10px;
+}
+
+.btn-container {
+    white-space: nowrap;
 }
 
 .center {
