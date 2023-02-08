@@ -1,11 +1,11 @@
 <template>
   <div class="todo-list">
     <h1>To Do:</h1>
-    <ol class="list">
+    <ul class="list">
       <li v-for="item in listItems" :key="item.id" >
         <TodoListItem :text=item.task :id=item.id :onDelete=onItemDelete :onSave=onItemUpdate />
       </li>
-    </ol>
+    </ul>
 
     <button @click="addItemClick">Add new Item</button>
   </div>
@@ -59,6 +59,8 @@
     .list {
       width: 50%;
       margin: auto;
+
+      list-style-type: none;
     }
   </style>
   
