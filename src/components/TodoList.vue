@@ -19,7 +19,7 @@
     name: 'TodoList',
     data() {
       return {
-        listItems: [{id: 0, task: "Delete This"}],
+        listItems: [],
       }
     },
     mounted() {
