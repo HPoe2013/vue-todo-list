@@ -1,7 +1,7 @@
 <template>
   <div class="funny-image">
     <img 
-      @click="rotationDeg+=90" 
+      @click="rotationDeg=(rotationDeg + rotationAmount) % (rotationAmount * rotationResetCount)" 
       v-bind:style="{transform: `rotate(${rotationDeg}deg)`}" 
       alt="Fun Image" 
       src="../assets/test-image.png"
@@ -14,6 +14,8 @@ export default {
   name: 'ImageRotater',
   data() {
     return {
+        rotationAmount: 360,
+        rotationResetCount: 5,
         rotationDeg: 0
     }
   }
@@ -24,5 +26,6 @@ export default {
 <style scoped>
 img {
     transition: transform 0.5s ease-in-out;
+    cursor:pointer;
 }
 </style>
