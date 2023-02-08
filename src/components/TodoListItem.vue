@@ -53,6 +53,8 @@
     border: 1px solid;
     padding: 5px;
     border-radius: 10px;
+
+    background-color: white;
 }
 
 .edit-text {
