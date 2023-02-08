@@ -3,10 +3,10 @@
         <input type="checkbox" /> 
         <span class="center">
             <span v-if="!isEditing">{{text}}</span>
-            <input class="edit-text" v-if="isEditing" :value="text" />
+            <input @keydown="onUpdate($event)" class="edit-text" v-if="isEditing" :value="text" />
         </span>
         <span class="btn-container">
-            <button class="edit-btn" @click="editClicked($event)">{{isEditing?"Save":"Edit"}}</button>
+            <button class="edit-btn" @click="editClicked()">{{isEditing?"Save":"Edit"}}</button>
             <button class="delete-btn" @click="deleteClicked()">X</button>
         </span>
     </div>
@@ -23,16 +23,20 @@
         }, data () {
             return {
                 isEditing: false,
+                updatedText: this.text,
             }
         }, methods: {
+            onUpdate(event) {
+                this.updatedText = event.target.value;
+            },
             deleteClicked() {
                 this.isEditing 
                     ? this.isEditing = false
                     : this.onDelete(this.id);
             },
-            editClicked (e) {
+            editClicked () {
                 this.isEditing
-                    ? this.onSave(this.id, e.target.parentElement.parentElement.querySelector('.edit-text').value)
+                    ? this.onSave(this.id, this.updatedText)
                     : this.isEditing = true;
             }
         }
@@ -50,6 +54,10 @@
     border: 1px solid;
     padding: 5px;
     border-radius: 10px;
+}
+
+.edit-text {
+    width: 85%;
 }
 
 .btn-container {
