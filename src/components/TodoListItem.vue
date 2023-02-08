@@ -1,6 +1,5 @@
 <template>
     <div class="todo-list-item">
-        <input type="checkbox" /> 
         <span class="center">
             <span v-if="!isEditing">{{text}}</span>
             <input @keydown="onUpdate($event)" class="edit-text" v-if="isEditing" :value="text" />
